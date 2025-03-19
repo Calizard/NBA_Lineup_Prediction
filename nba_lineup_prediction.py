@@ -67,7 +67,7 @@ def train_model(df, features):
 
     y_pred = model.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
-    print(f"Model Accuracy: {accuracy:.4f}")
+    print(f"Model Accuracy against an 80:20 train/test split: {accuracy:.4f}")
 
     return model
 
@@ -108,7 +108,7 @@ def compare_predictions(predictions_file, labels_file):
     correct_predictions = (predicted == actual).sum()
     total_predictions = len(predicted)
     accuracy = (correct_predictions / total_predictions) * 100
-    print(f"Overall Model Accuracy: {correct_predictions}/{total_predictions} ({accuracy:.2f}%)")
+    print(f"Model Accuracy against provided 2007-2016 test data: {correct_predictions}/{total_predictions} ({accuracy:.2f}%)")
     
     # Calculate accuracy for each year (2007-2016)
     years = range(2007, 2017)  # Years from 2007 to 2016
