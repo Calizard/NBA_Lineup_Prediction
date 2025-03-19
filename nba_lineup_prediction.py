@@ -60,9 +60,9 @@ def train_model(df, features):
     X = df[features]
     y = df["target_player"]
     
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=43)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    model = RandomForestClassifier(n_estimators=50, max_depth=20, random_state=43)
+    model = RandomForestClassifier(n_estimators=50, max_depth=25, random_state=42)
     model.fit(X_train, y_train)
 
     y_pred = model.predict(X_test)
