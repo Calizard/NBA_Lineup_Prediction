@@ -109,3 +109,23 @@ The following players were not present in the training dataset and contributed t
 2. ***Impossible Predictions***: In cases where the correct label was a new player, the model had no chance of predicting correctly.
 
 3. ***Data Limitations***: The model's performance is constrained by the availability of historical data, particularly for newer players who debuted in 2016.
+
+## Optional: Identifying New Players in 2016 Test Data
+For users interested in understanding how the list of new players in the 2016 test data was identified and compared to the training dataset, an optional script is provided. This script analyzes the last 100 rows of the test data (NBA_test.csv) to determine which players were not present in the training dataset (matchups_combined_cleaned.csv). It also identifies rows in the test data that contain these new players.
+
+### Purpose of the Script
+The script performs the following tasks:
+
+- Extracts Unique Players from Training Data: Compiles a list of all unique players present in the training dataset.
+- Loads and Processes Test Data: Focuses on the last 100 rows of the test data, which correspond to the 2016 season.
+- Identifies New Players: Compares the players in the test data against the training dataset to identify new players who were not part of the training data.
+- Analyzes Rows with New Players: Identifies specific rows in the test data that contain these new players and provides a detailed breakdown.
+
+Run the script using the command:  
+```
+python count_players.py
+``` 
+This script will display the following output:  
+- The number of new players in the 2016 test data.
+- A list of new players.
+- A detailed breakdown of rows containing new players.
